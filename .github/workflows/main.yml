@@ -1,0 +1,27 @@
+name: Vulkan WSI Layer CI
+
+on:
+  push: # Executa o workflow em qualquer push
+  pull_request: # Executa também em PRs (opcional)
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Install dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y build-essential cmake g++ pkg-config vulkan* -y 
+
+      - name: Build Vulkan WSI Layer
+        run: |
+         cmake .
+         make 
+      - name: Run Tests
+        run: |
+          # Adicione seus testes, se houver
+          echo "Running tests..."
