@@ -1,4 +1,4 @@
-Iname: Vulkan WSI Layer CI
+name: Vulkan WSI Layer CI
 
 on:
   push: # Executa o workflow em qualquer push
