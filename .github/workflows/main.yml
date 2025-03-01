@@ -15,7 +15,8 @@ jobs:
       - name: Install dependencies
         run: |
           sudo apt-get update
-          sudo apt-get install -y build-essential cmake g++ pkg-config vulkan* xutils-dev xserver-xorg-dev mesa* vulkan-sdk* vulkan-validationlayers* libshaderc-dev python3-vulkan* -y 
+          sudo apt-get install -y python3-vulkan* libshaderc-dev
+          sudo apt-get install -y build-essential cmake g++ pkg-config vulkan* xutils-dev xserver-xorg-dev mesa* vulkan-sdk* vulkan-validationlayers* 
 
       - name: Build Vulkan WSI Layer
         run: |
